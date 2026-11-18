@@ -1,4 +1,4 @@
-﻿terraform {
+terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_security_group" "final_project_sg" {
-  name        = "lytvynov-final-project-sg"
+  name_prefix = "lytvynov-final-sg-"
   description = "Allow SSH (22) and App (3000)"
 
   ingress {
@@ -55,3 +55,4 @@ resource "aws_instance" "final_project_ec2" {
     Name = "Lytvynov-Final-Project"
   }
 }
+
